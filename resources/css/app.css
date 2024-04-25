@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.linea_textual {
+    position:relative;
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+.linea_textual input {
+    border: none;
+    border-bottom: 1px solid #c3c3c3; /* color de la línea */
+    outline: none;
+    padding-bottom: 0px; /* espacio entre la línea y el texto del input */
+    width: 100%;
+}
+.linea_textual input:focus{
+    border-bottom: 2px solid #0026ff;
+}
+
+.linea_textual::after {
+    content: '';
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px; /* grosor de la línea */
+    background-color: #55fc2b; /* color de la línea */
+}

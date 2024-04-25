@@ -12,7 +12,8 @@ class CreditRequestController extends Controller
      */
     public function index()
     {
-        //
+        $registros = CreditRequest::all();
+        return view('index_requests', ['registros' => $registros]);
     }
 
     /**
@@ -32,6 +33,8 @@ class CreditRequestController extends Controller
             'title' => $request->get('title'),
             'content' => $request->get('content')
         ]);
+
+        return redirect('/requests')->with('mensaje', 'Solicitud creada correctamente');
     }
 
     /**
